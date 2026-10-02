@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>不寧腿症候群怎麼治？2024 AASM 實證指引圖解</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Huninn&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --orange:#E8552D; --amber:#F4A93C; --teal:#028090; --ink:#12343B;
+  --bg:#EEF7F6; --paper:#FFFFFF; --soft:#DCEFEC; --muted:#4A6166;
+  --g-strong:#1E9E62; --g-cond:#7CC47F; --a-cond:#F4A93C; --r-strong:#E8552D;
+  --line:#C7E2DE;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ink:#E6F2F0; --bg:#0F2327; --paper:#16323A; --soft:#1C3F47; --muted:#A9C4C6; --line:#2A5058;
+  }
+}
+:root[data-theme="dark"]{ --ink:#E6F2F0; --bg:#0F2327; --paper:#16323A; --soft:#1C3F47; --muted:#A9C4C6; --line:#2A5058; }
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px); scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans TC","Microsoft JhengHei","PingFang TC",sans-serif;font-size:18px;line-height:1.8}
+h1,h2,h3,.round{font-family:"Huninn","Noto Sans TC","Microsoft JhengHei",sans-serif;font-weight:400;line-height:1.35}
+a{color:var(--teal)}
+img,svg{max-width:100%}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h2{font-size:clamp(28px,4.4vw,40px);margin:0 0 12px}
+h3{font-size:24px;margin:0 0 8px}
+p{margin:0 0 14px}
+.lead{font-size:20px;color:var(--muted);max-width:44em}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
+
+/* hero */
+.hero{background:var(--teal);color:#fff;padding:48px 0 64px;position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:center}
+.hero h1{font-size:clamp(36px,6.4vw,64px);margin:6px 0 16px}
+.hero p{font-size:20px;opacity:.95}
+.tag{display:inline-block;background:var(--amber);color:#12343B;border-radius:999px;padding:4px 14px;font-weight:700;font-size:16px}
+.legs{width:100%;max-width:340px;justify-self:center}
+.leg{transform-origin:50% 8%;animation:wiggle 1.6s ease-in-out infinite}
+.leg.r{animation-delay:.4s}
+@keyframes wiggle{0%,100%{transform:rotate(0)}25%{transform:rotate(5deg)}75%{transform:rotate(-5deg)}}
+.hero-wave{position:absolute;left:0;right:0;bottom:-1px;height:40px;width:100%}
+
+/* urge cards */
+.urge{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:22px}
+.urge div{background:var(--paper);border-radius:22px;padding:18px 18px 14px;border:2px solid var(--line)}
+.urge b{display:block;font-family:"Huninn","Noto Sans TC",sans-serif;font-size:22px;color:var(--teal);font-weight:400}
+.stat{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+.stat span{background:var(--soft);border-radius:14px;padding:8px 14px;font-weight:500}
+
+/* steps */
+.path{display:grid;gap:16px;margin-top:22px}
+.step{display:grid;grid-template-columns:64px 1fr;gap:16px;background:var(--paper);border-radius:24px;padding:20px;border:2px solid var(--line)}
+.step .n{width:56px;height:56px;border-radius:50%;background:var(--orange);color:#fff;display:grid;place-items:center;font-family:"Huninn",sans-serif;font-size:28px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.chips span{background:var(--soft);border-radius:999px;padding:4px 12px;font-size:16px}
+
+/* iron checker */
+.checker{background:var(--paper);border-radius:28px;padding:24px;border:3px dashed var(--amber);margin-top:22px}
+.checker .row{display:flex;flex-wrap:wrap;gap:16px;align-items:end}
+.checker label{display:flex;flex-direction:column;font-weight:700;gap:6px;font-size:17px}
+.checker input,.checker select{font:inherit;font-size:20px;padding:10px 12px;border-radius:14px;border:2px solid var(--line);background:var(--bg);color:var(--ink);width:180px}
+.btn{font:inherit;font-weight:700;border:0;border-radius:999px;padding:12px 24px;background:var(--orange);color:#fff;cursor:pointer;font-size:18px}
+.result{margin-top:18px;border-radius:18px;padding:16px 18px;background:var(--soft);min-height:60px}
+.small{font-size:15px;color:var(--muted)}
+
+/* traffic light */
+.light-wrap{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:start;margin-top:24px}
+.pole{position:sticky;top:calc(16px + env(safe-area-inset-top,0px));background:#12343B;border-radius:40px;padding:14px;display:grid;gap:12px;justify-items:center}
+.pole button{width:84px;height:84px;border-radius:50%;border:4px solid rgba(255,255,255,.15);cursor:pointer;font:inherit;font-size:14px;font-weight:700;color:#12343B;opacity:.35;transition:opacity .25s, transform .25s}
+.pole button.on{opacity:1;transform:scale(1.06);box-shadow:0 0 22px currentColor}
+.pole .b1{background:var(--g-strong);color:#fff}
+.pole .b2{background:var(--g-cond)}
+.pole .b3{background:var(--a-cond)}
+.pole .b4{background:var(--r-strong);color:#fff}
+.pole .all{width:84px;height:40px;border-radius:14px;background:#fff;opacity:.9;font-size:15px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.tabs button{font:inherit;font-size:17px;border-radius:999px;border:2px solid var(--teal);background:transparent;color:var(--ink);padding:6px 16px;cursor:pointer}
+.tabs button[aria-pressed="true"]{background:var(--teal);color:#fff}
+.list{display:grid;gap:10px}
+details.item{background:var(--paper);border-radius:18px;border-left:10px solid var(--c);padding:0 16px}
+details.item summary{cursor:pointer;list-style:none;padding:14px 0;display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+details.item summary::-webkit-details-marker{display:none}
+.item .nm{font-weight:700;font-size:19px}
+.item .en{color:var(--muted);font-size:15px}
+.badge{margin-left:auto;font-size:14px;border-radius:999px;padding:3px 10px;background:var(--c);color:#12343B;font-weight:700;white-space:nowrap}
+.badge.dark{color:#fff}
+.item .body{padding:0 0 16px;border-top:1px dashed var(--line)}
+.item .body p{margin:10px 0 0}
+.cert{display:inline-block;font-size:14px;border:1.5px solid var(--muted);border-radius:8px;padding:0 8px;color:var(--muted)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:6px;margin-top:10px}
+.grid span{border-radius:12px;padding:6px 10px;font-size:15px;font-weight:700;line-height:1.35}
+.grid small{display:block;font-weight:400;font-size:13px;opacity:.85}
+.grid .good{background:#D6F0E1;color:#14553A}.grid .bad{background:#FBD9CD;color:#8A2A10}.grid .no{background:#EDEDED;color:#444}.grid .na{background:transparent;border:1.5px dashed var(--line);color:var(--muted)}
+.nore{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}.nore span{background:var(--paper);border:2px solid var(--line);border-radius:999px;padding:4px 14px}
+/* augmentation */
+.clock{background:var(--paper);border-radius:28px;padding:24px;border:2px solid var(--line);margin-top:22px}
+.day{position:relative;height:56px;border-radius:14px;background:linear-gradient(90deg,#FCE7B2 0%,#FFF6DA 30%,#FFF6DA 62%,#9BB7C8 80%,#3E5A77 100%);overflow:hidden;margin:14px 0 6px}
+.sym{position:absolute;top:8px;bottom:8px;border-radius:10px;background:var(--orange);transition:left .8s ease, width .8s ease}
+.hours{display:flex;justify-content:space-between;font-size:14px;color:var(--muted)}
+.body-map{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:16px}
+.body-map svg{width:120px}
+.limb{transition:fill .6s}
+.seg{display:inline-flex;border:2px solid var(--teal);border-radius:999px;overflow:hidden}
+.seg button{font:inherit;font-size:17px;border:0;background:transparent;color:var(--ink);padding:8px 18px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--teal);color:#fff}
+
+/* elder & tw */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+.box{background:var(--paper);border-radius:24px;padding:22px;border:2px solid var(--line)}
+.box.warn{border-color:var(--orange)}
+table{border-collapse:collapse;width:100%;font-size:17px}
+.tw{overflow-x:auto;margin-top:12px}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--soft)}
+ol.ask{padding-left:1.4em;margin:0}
+ol.ask li{margin-bottom:10px}
+.refs li{margin-bottom:12px;font-size:16px;word-break:break-word}
+footer{background:#12343B;color:#DCEFEC;padding:36px 0;font-size:16px}
+footer a{color:var(--amber)}
+
+@media (max-width:760px){
+  .hero .wrap{grid-template-columns:1fr}
+  .legs{max-width:220px}
+  .light-wrap{grid-template-columns:1fr}
+  .pole{position:static;grid-auto-flow:column;border-radius:30px;justify-content:center}
+  .pole button{width:62px;height:62px;font-size:12px}
+  .pole .all{width:62px;height:62px;border-radius:50%}
+  .two{grid-template-columns:1fr}
+  .step{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion: reduce){
+  .leg{animation:none} .sym,.pole button{transition:none} html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <span class="tag">實證整理｜2024 AASM 臨床指引</span>
+      <h1>腳一直想動，<br>怎麼治才對？</h1>
+      <p>不寧腿症候群（RLS）的治療觀念在 2024 年大幅更新：先驗鐵、處理加重因子；α2δ 配體與靜脈鐵劑升為強烈建議，多巴胺類藥物不再建議作為長期標準治療。這一頁把指引的 28 條建議整理成看得懂的樣子。</p>
+    </div>
+    <svg class="legs" viewBox="0 0 200 220" role="img" aria-label="兩條不停晃動的腿">
+      <circle cx="100" cy="40" r="26" fill="#F4A93C"/>
+      <circle cx="91" cy="36" r="3.5" fill="#12343B"/><circle cx="109" cy="36" r="3.5" fill="#12343B"/>
+      <path d="M90 50 q10 -6 20 0" stroke="#12343B" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <rect x="70" y="66" width="60" height="62" rx="24" fill="#fff"/>
+      <g class="leg"><rect x="74" y="118" width="20" height="78" rx="10" fill="#E8552D"/><ellipse cx="80" cy="200" rx="18" ry="9" fill="#12343B"/></g>
+      <g class="leg r"><rect x="106" y="118" width="20" height="78" rx="10" fill="#E8552D"/><ellipse cx="120" cy="200" rx="18" ry="9" fill="#12343B"/></g>
+      <text x="150" y="150" font-size="22" fill="#F4A93C">〰</text><text x="28" y="165" font-size="22" fill="#F4A93C">〰</text>
+    </svg>
+  </div>
+  <svg class="hero-wave" viewBox="0 0 1200 40" preserveAspectRatio="none" aria-hidden="true"><path d="M0 40 Q150 0 300 20 T600 20 T900 20 T1200 10 V40Z" fill="var(--bg)"/></svg>
+</header>
+
+<main>
+<section id="what">
+  <div class="wrap">
+    <h2>先認識：什麼是不寧腿？</h2>
+    <p class="lead">沒有抽血或儀器能直接確診，靠的是仔細問病史。符合下面四個特徵，就要想到不寧腿。</p>
+    <div class="urge">
+      <div><b>想動</b>雙腿（有時手臂）有一股想動的衝動，常伴隨說不出的不舒服感。</div>
+      <div><b>靜止時加重</b>坐著、躺著、搭長途車時特別明顯。</div>
+      <div><b>一動就好</b>起來走一走、動一動，症狀就緩解。</div>
+      <div><b>傍晚到夜間</b>越接近晚上越嚴重，常讓人睡不著。</div>
+    </div>
+    <div class="stat">
+      <span>成人約 2–3% 有臨床上顯著的不寧腿</span>
+      <span>約 90% 患者有入睡或睡眠維持困難</span>
+      <span>女性約多 50%</span>
+      <span>約一半患者有一等親也有此症</span>
+    </div>
+    <p style="margin-top:20px">成因目前認為與<strong>腦部缺鐵</strong>和<strong>遺傳</strong>有關。懷孕、洗腎等容易缺鐵的狀況，發生率也較高。要和它區分的情況包括：周邊神經病變、靜坐不能（akathisia）、肌肉痙攣、姿勢不舒服、關節不適、夜間抽筋等；兒童則要和生長痛、抽筋、行為問題區分。</p>
+  </div>
+</section>
+
+<section id="first" style="background:var(--paper)">
+  <div class="wrap">
+    <h2>治療的第一步，不是吃藥</h2>
+    <p class="lead">指引的「良好實務聲明」寫得很清楚：處理加重因子、檢查鐵，是所有治療的起點。</p>
+    <div class="path">
+      <div class="step"><div class="n">1</div><div>
+        <h3>找出會讓症狀加重的因素</h3>
+        <p>指引點名的加重因子：</p>
+        <div class="chips"><span>酒精</span><span>咖啡因</span><span>抗組織胺藥物（部分感冒藥、助眠藥）</span><span>血清素類藥物（部分抗憂鬱劑）</span><span>抗多巴胺藥物（部分止吐藥、抗精神病藥）</span><span>未治療的睡眠呼吸中止</span></div>
+      </div></div>
+      <div class="step"><div class="n">2</div><div>
+        <h3>抽血檢查鐵，而且要看對指標</h3>
+        <p>要驗<strong>鐵蛋白（ferritin）</strong>和<strong>運鐵蛋白飽和度（TSAT）</strong>，最好早上抽血，抽血前 24 小時避免含鐵補充品與食物。不寧腿患者的補鐵標準，比一般人「沒有貧血」嚴格得多，即使血紅素正常也可能需要補。</p>
+      </div></div>
+      <div class="step"><div class="n">3</div><div>
+        <h3>再依嚴重度選擇藥物或其他治療</h3>
+        <p>見下方「治療紅綠燈」。</p>
+      </div></div>
+    </div>
+
+    <div class="checker" id="iron">
+      <h3>鐵蛋白對照小工具</h3>
+      <p class="small">依指引的專家共識補鐵門檻（指引註明：這些門檻尚未經實證測試）。僅供理解，實際是否補鐵、用口服或靜脈注射，請由醫師判斷。</p>
+      <div class="row">
+        <label>對象<select id="who"><option value="adult">成人</option><option value="child">兒童</option></select></label>
+        <label>鐵蛋白 ng/mL<input id="fer" type="number" inputmode="decimal" min="0" placeholder="例如 60"></label>
+        <label>運鐵蛋白飽和度 %<input id="tsat" type="number" inputmode="decimal" min="0" max="100" placeholder="例如 25"></label>
+        <button class="btn" id="chk" type="button">對照看看</button>
+      </div>
+      <div class="result" id="res" aria-live="polite">輸入檢驗數值後按「對照看看」。</div>
+    </div>
+  </div>
+</section>
+
+<section id="light">
+  <div class="wrap">
+    <h2>治療紅綠燈：28 條建議一次看</h2>
+    <p class="lead">指引依 GRADE 方法，把每種治療分成四種燈號。點左邊的燈篩選，點每一項看研究細節。</p>
+    <div class="light-wrap">
+      <div class="pole" role="group" aria-label="依建議強度篩選">
+        <button class="b1 on" data-f="sf" aria-pressed="true">強烈<br>建議</button>
+        <button class="b2 on" data-f="cf" aria-pressed="true">有條件<br>建議</button>
+        <button class="b3 on" data-f="ca" aria-pressed="true">有條件<br>不建議</button>
+        <button class="b4 on" data-f="sa" aria-pressed="true">強烈<br>不建議</button>
+        <button class="all" data-f="all">全部</button>
+      </div>
+      <div>
+        <div class="tabs" role="group" aria-label="對象">
+          <button data-p="adult" aria-pressed="true">成人</button>
+          <button data-p="esrd" aria-pressed="false">洗腎（末期腎病）</button>
+          <button data-p="child" aria-pressed="false">兒童</button>
+          <button data-p="plmd" aria-pressed="false">週期性肢體抽動症</button>
+        </div>
+        <div class="list" id="list"></div>
+        <p class="small" style="margin-top:12px">證據確定性：中／低／極低，代表研究結果的可信程度。「有條件」表示多數人適用，但需依個人狀況與偏好共同決策。台灣商品名僅供辨識參考，實際品項請以醫院藥袋為準。</p>
+      </div>
+    </div>
+    <div class="two" style="margin-top:28px">
+      <div class="box"><h3>「強烈」和「有條件」差在哪？</h3><p><strong>強烈建議</strong>：幾乎所有病人都應該被提供這個選項，可作為醫療品質指標。</p><p><strong>有條件建議</strong>：多數病人適合，但不同人可能有不同選擇，醫師需與病人一起判斷是否符合他的狀況與價值觀。</p><p class="small">格子中的「有改善」代表研究的合併結果達到指引預設的臨床意義門檻；「症狀惡化現象」與「因副作用退出」屬於傷害面，標示為「有」代表達到門檻。</p></div>
+      <div class="box"><h3>證據還不夠，暫無建議</h3><p>以下治療有研究，但證據不足或結論不一致，指引不做建議，也不代表無效：</p>
+        <div class="nore"><span>針灸</span><span>肉毒桿菌素</span><span>認知行為治療</span><span>瑜伽</span><span>維生素 D</span><span>近紅外光治療</span><span>經顱磁刺激</span><span>經皮脊髓直流電刺激</span><span>Clonidine</span><span>Tramadol</span><span>Perampanel</span><span>靜脈 iron sucrose（一般成人）</span></div>
+        <p class="small" style="margin-top:10px">洗腎患者：維生素 E、維生素 C＋E 合併使用，同樣證據不足。</p></div>
+    </div>
+    <p class="small" style="margin-top:14px">指引文獻搜尋截至 2023 年 9 月。懷孕期間不寧腿很常見，指引提醒用藥需考量各治療在懷孕期的安全性。</p>
+  </div>
+</section>
+
+<section id="aug" style="background:var(--paper)">
+  <div class="wrap">
+    <h2>為什麼多巴胺類藥物被降級？</h2>
+    <p class="lead">關鍵是「症狀惡化現象（augmentation）」：長期服用多巴胺類藥物數月到數年後，症狀反而越來越嚴重。</p>
+    <div class="clock">
+      <div class="seg" role="group" aria-label="切換時期">
+        <button id="t0" aria-pressed="true">剛開始治療</button>
+        <button id="t1" aria-pressed="false">長期使用後</button>
+      </div>
+      <div class="day" aria-hidden="true"><div class="sym" id="sym" style="left:79%;width:17%"></div></div>
+      <div class="hours" aria-hidden="true"><span>早上 6 點</span><span>中午</span><span>傍晚 6 點</span><span>深夜</span></div>
+      <div class="body-map">
+        <svg viewBox="0 0 100 180" aria-hidden="true">
+          <circle cx="50" cy="20" r="14" fill="#F4A93C"/>
+          <rect x="34" y="36" width="32" height="60" rx="12" fill="#C7E2DE"/>
+          <rect id="armL" class="limb" x="18" y="40" width="12" height="52" rx="6" fill="#C7E2DE"/>
+          <rect id="armR" class="limb" x="70" y="40" width="12" height="52" rx="6" fill="#C7E2DE"/>
+          <rect class="limb" x="36" y="96" width="12" height="76" rx="6" fill="#E8552D"/>
+          <rect class="limb" x="52" y="96" width="12" height="76" rx="6" fill="#E8552D"/>
+        </svg>
+        <p id="augtxt" style="flex:1;min-width:220px;margin:0">症狀主要在晚上出現，集中在雙腿。</p>
+      </div>
+    </div>
+    <div class="two">
+      <div class="box"><h3>指引怎麼看</h3><p>多巴胺類藥物短期效果確實不錯，但不寧腿常是終身疾病，治療應以長期有效為目標。症狀惡化在劑量越高時越常見也越嚴重，且停藥後擴大的症狀未必能完全恢復；另有研究發現，長期用過多巴胺類藥物的人，之後改用 gabapentin enacarbil 效果可能較差。</p></div>
+      <div class="box warn"><h3>正在吃的人別急著停</h3><p>指引特別提醒：不要突然停掉多巴胺類藥物，可能出現劇烈的反彈症狀。應與醫師討論長期計畫，通常是先加上新的治療，再慢慢減量，同時觀察症狀與情緒變化。短期、特定情境（例如長途搭機）仍可由醫師評估使用。</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="elder">
+  <div class="wrap">
+    <h2>長者用藥，要多想一步</h2>
+    <div class="two">
+      <div class="box warn">
+        <h3>鎮靜安眠類（苯二氮平類）</h3>
+        <p>例如 clonazepam（利福全、克癇平）。指引對不寧腿是<strong>有條件不建議</strong>：只有 1 篇沒有安慰劑組的隨機試驗，療效無法確定，並提到認知功能受損與藥物依賴的風險。</p>
+        <p>美國老年醫學會 Beers Criteria（2023）也將苯二氮平類列為 65 歲以上長者應避免的藥物，因為會增加認知障礙、譫妄、跌倒與骨折的風險。</p>
+        <p><strong>已經在吃的人請勿自行停藥</strong>，突然停藥可能出現戒斷症狀，減量需由醫師安排。</p>
+      </div>
+      <div class="box">
+        <h3>α2δ 配體也有要注意的地方</h3>
+        <p>常見副作用是頭暈、嗜睡，長者需注意跌倒。指引也提醒：若同時使用鴉片類藥物，或有未治療的睡眠呼吸中止，鎮靜與呼吸抑制的作用可能加乘；有鴉片類藥物使用疾患者，開藥前應先評估誤用風險；另有一篇非不寧腿族群的研究顯示，這類藥物與慢性阻塞性肺病嚴重惡化的風險增加有關。腎功能不佳者需調整劑量。</p>
+        <h3 style="margin-top:14px">台灣可取得的 α2δ 配體</h3>
+        <div class="tw"><table>
+          <tr><th>成分</th><th>常見商品名</th></tr>
+          <tr><td>Gabapentin</td><td>鎮頑癲（Neurontin）等</td></tr>
+          <tr><td>Pregabalin</td><td>利瑞卡（Lyrica）等</td></tr>
+          <tr><td>Gabapentin enacarbil</td><td>目前僅美國（Horizant）與日本（Regnite）核准，台灣未上市</td></tr>
+        </table></div>
+        <p class="small" style="margin-top:8px">指引提到，強烈建議的治療中，除了 gabapentin enacarbil 之外都屬「適應症外使用」，健保給付與否需依醫師判斷。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ask" style="background:var(--paper)">
+  <div class="wrap">
+    <h2>看診時可以問醫師的問題</h2>
+    <div class="box" style="margin-top:18px">
+      <ol class="ask">
+        <li>我有沒有檢查過鐵蛋白和運鐵蛋白飽和度？數值是否需要補鐵？</li>
+        <li>我目前的藥物中，有沒有會讓不寧腿加重的藥？</li>
+        <li>有沒有可能是睡眠呼吸中止讓症狀變嚴重？需要做睡眠檢查嗎？</li>
+        <li>以我的狀況，gabapentin 或 pregabalin 是否適合？劑量要怎麼依腎功能調整？</li>
+        <li>如果要換藥，現在的藥該怎麼慢慢減量？減量期間要注意什麼？</li>
+      </ol>
+      <p class="small" style="margin-top:12px">建議就診科別：神經內科或睡眠門診。</p>
+    </div>
+  </div>
+</section>
+
+<section id="refs">
+  <div class="wrap">
+    <h2>參考文獻</h2>
+    <ol class="refs">
+      <li>Winkelman JW, Berkowski JA, DelRosso LM, et al. Treatment of restless legs syndrome and periodic limb movement disorder: an American Academy of Sleep Medicine clinical practice guideline. <i>J Clin Sleep Med.</i> 2025;21(1):137-152. doi:10.5664/jcsm.11390. PMID: 39324694. 全文：<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11701286/">PMC11701286</a></li>
+      <li>Winkelman JW, et al. Treatment of restless legs syndrome and periodic limb movement disorder: an American Academy of Sleep Medicine systematic review, meta-analysis, and GRADE assessment. <i>J Clin Sleep Med.</i> 2025;21(1):153-199.</li>
+      <li>American Geriatrics Society Beers Criteria® Update Expert Panel. American Geriatrics Society 2023 updated AGS Beers Criteria® for potentially inappropriate medication use in older adults. <i>J Am Geriatr Soc.</i> 2023;71(7):2052-2081. doi:10.1111/jgs.18372.</li>
+      <li>Allen RP, Picchietti DL, Auerbach M, et al. Evidence-based and consensus clinical practice guidelines for the iron treatment of restless legs syndrome/Willis-Ekbom disease in adults and children: an IRLSSG task force report. <i>Sleep Med.</i> 2018;41:27-44.（補鐵門檻的來源）</li>
+      <li>Rivotril®（利福全）台灣仿單：clonazepam 治療時不能突然停藥，必須逐步減量。</li>
+    </ol>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>本頁為衛教知識整理，內容依據上列文獻，不能取代醫師診斷與處方。任何用藥調整請與您的醫師、藥師討論。</p>
+    <p class="round" style="font-size:20px;margin:0">愛迪樂健康促進團隊</p>
+  </div>
+</footer>
+
+<script>
+const S={sf:{t:'強烈建議',c:'var(--g-strong)',d:1},cf:{t:'有條件建議',c:'var(--g-cond)'},ca:{t:'有條件不建議',c:'var(--a-cond)'},sa:{t:'強烈不建議',c:'var(--r-strong)',d:1}};
+const D=[
+ ['adult','sf','Gabapentin enacarbil','gabapentin 前驅藥（α2δ 配體）','中','8 篇隨機試驗與 3 篇觀察研究：改善症狀嚴重度、睡眠品質與生活品質，效果中等。副作用以嗜睡、頭暈為主。','唯一經美國 FDA 核准治療不寧腿且獲本指引推薦的藥物；藥價較高。目前僅美國與日本核准，台灣未上市。'],
+ ['adult','sf','Gabapentin','鎮頑癲（Neurontin）等｜α2δ 配體','中','2 篇隨機試驗與 4 篇觀察研究：改善症狀嚴重度，效果中等。副作用以嗜睡、頭暈為主。','藥價低，可近性高。'],
+ ['adult','sf','Pregabalin','利瑞卡（Lyrica）等｜α2δ 配體','中','3 篇隨機試驗：改善症狀嚴重度與睡眠品質，效果中等。因副作用退出試驗的比例達臨床意義。','副作用以嗜睡、頭暈為主。'],
+ ['adult','sf','靜脈注射 ferric carboxymaltose','靜脈鐵劑','中','5 篇隨機試驗：改善症狀嚴重度、睡眠品質與生活品質，效果中等。副作用包括低血磷、頭暈。','需符合良好實務聲明的鐵狀態門檻。屬緩釋、高劑量型，較能讓鐵進入中樞神經。'],
+ ['adult','cf','靜脈注射低分子量 iron dextran','靜脈鐵劑','極低','1 篇觀察研究：改善症狀嚴重度，效果小。','舊式高分子量劑型曾有過敏性休克風險，低分子量劑型文獻中未見此風險。'],
+ ['adult','cf','靜脈注射 ferumoxytol','靜脈鐵劑','極低','1 篇無安慰劑組的隨機試驗（前後比較）：改善症狀嚴重度，效果小。',''],
+ ['adult','cf','口服硫酸亞鐵（ferrous sulfate）','口服鐵劑','中','1 篇隨機試驗：改善症狀嚴重度，效果大。因副作用退出的比例達臨床意義。','鐵蛋白高於 50–75 ng/mL 時口服鐵吸收差；常見副作用為便祕。'],
+ ['adult','cf','Dipyridamole','抗血小板藥','低','1 篇隨機試驗：改善症狀嚴重度，效果中等。副作用包括頭暈。','原用於中風與周邊血管疾病；可能透過增加腺苷作用改善症狀。'],
+ ['adult','cf','長效 oxycodone 及其他鴉片類','鴉片類止痛藥','中','1 篇針對難治型患者的隨機試驗：改善症狀嚴重度，效果中等。副作用包括疲倦、嗜睡、頭暈。','用於中重度或難治型。需留意濫用、依賴、過量與呼吸抑制，與鎮靜安眠藥、α2δ 配體併用時風險增加。'],
+ ['adult','cf','雙側高頻腓神經刺激','非藥物｜穿戴式裝置','中','2 篇隨機試驗（多數為難治型、併用其他治療）：改善症狀嚴重度，效果小。副作用為刺激時不適與皮膚刺激。','戴在膝蓋下方，刺激腓神經。費用較高。'],
+ ['adult','ca','Levodopa','多巴胺前驅物','極低','1 篇隨機試驗與 2 篇觀察研究：症狀嚴重度與睡眠品質未達臨床顯著改善，且有明顯症狀惡化風險。','重視短期緩解、較不在意長期副作用者，仍可與醫師討論短期使用。'],
+ ['adult','ca','Pramipexole','樂伯克（Mirapex）等｜多巴胺促效劑','中','17 篇隨機試驗與 7 篇觀察研究：短期改善症狀、睡眠與生活品質，效果中等；但長期有臨床顯著的症狀惡化現象，另有衝動控制障礙的報告。','同上，可用於重視短期效果者，需定期監測症狀惡化與衝動控制問題。'],
+ ['adult','ca','Rotigotine 貼片','紐普洛（Neupro）貼片｜多巴胺促效劑','低','8 篇隨機試驗與 3 篇觀察研究：短期有效，效果中等；長期有臨床顯著的症狀惡化現象。副作用包括嗜睡、頭暈、貼片處皮膚反應。',''],
+ ['adult','ca','Ropinirole','力必平（Requip）等｜多巴胺促效劑','中','13 篇隨機試驗與 2 篇觀察研究：改善症狀與生活品質，效果小；長期有臨床顯著的症狀惡化現象。',''],
+ ['adult','ca','Bupropion','抗憂鬱劑','中','1 篇隨機試驗：症狀未達臨床顯著改善。',''],
+ ['adult','ca','Carbamazepine','抗癲癇藥','低','2 篇隨機試驗：症狀未達臨床顯著改善；另有肝毒性、造血系統副作用等風險。',''],
+ ['adult','ca','Clonazepam','利福全（Rivotril）、克癇平（Clonopam）｜苯二氮平類','極低','僅 1 篇無安慰劑組的隨機試驗，療效無法確定。副作用為鎮靜，另有認知功能受損與藥物依賴的風險。','長者另需參考 Beers Criteria。已在服用者請勿自行停藥。'],
+ ['adult','ca','纈草（Valerian）','草本補充品','極低','1 篇隨機試驗：症狀與睡眠品質未達臨床顯著改善。',''],
+ ['adult','ca','Valproic acid','抗癲癇藥','低','1 篇隨機試驗：未達臨床顯著改善；另有肝毒性、致畸胎風險。',''],
+ ['adult','sa','Cabergoline','麥角類多巴胺促效劑','中','2 篇隨機試驗與 3 篇觀察研究：其實症狀改善效果大，但副作用包括頭暈、眩暈與症狀惡化現象，並有心臟瓣膜病變風險，整體傷害被評為「大」。','這是 28 條中唯一「強烈不建議」的項目：有效，但風險更大。'],
+ ['esrd','cf','Gabapentin','α2δ 配體','極低','1 篇隨機試驗與 2 篇觀察研究：改善症狀嚴重度與睡眠品質，效果大。副作用為鎮靜，因副作用退出的比例達臨床意義。','需依腎功能大幅調整劑量。'],
+ ['esrd','cf','靜脈注射 iron sucrose','靜脈鐵劑','中','適用於鐵蛋白 < 200 ng/mL 且運鐵蛋白飽和度 < 20% 的洗腎患者。1 篇隨機試驗：改善症狀嚴重度，效果中等；副作用輕微。','在一般成人不寧腿患者中，此劑型未顯示臨床顯著效益。'],
+ ['esrd','cf','維生素 C','補充品','低','1 篇隨機試驗：改善症狀嚴重度，效果中等。該研究未報告副作用退出情形。',''],
+ ['esrd','ca','Levodopa','多巴胺前驅物','低','1 篇隨機試驗與 2 篇觀察研究：短期有小幅改善，但指引認為症狀惡化風險相當大。',''],
+ ['esrd','ca','Rotigotine 貼片','多巴胺促效劑','極低','1 篇隨機試驗：僅症狀嚴重度改善，效果中等；因副作用退出的比例達臨床意義，長期有症狀惡化風險。',''],
+ ['child','cf','口服硫酸亞鐵','口服鐵劑','極低','2 篇觀察研究：改善症狀嚴重度，效果小，副作用輕微。適用於兒童鐵蛋白 < 50 ng/mL。','需留意便祕等可能導致停藥的副作用；其他成人藥物在兒童缺乏證據支持。'],
+ ['plmd','ca','Triazolam','苯二氮平類安眠藥','極低','1 篇隨機試驗：白天嗜睡小幅改善，但整體效益不足以支持使用。','週期性肢體抽動症（PLMD）在成人的診斷本身仍有爭議，近 20 年缺乏治療研究。'],
+ ['plmd','ca','Valproic acid','抗癲癇藥','極低','1 篇觀察研究：肢體抽動次數減少，但未使用有效工具評估重要結果，效益無法確定；因副作用退出的比例達臨床意義，另有肝毒性與致畸胎風險。','']
+];
+const G={
+ 'adult|Gabapentin enacarbil':'YYY-N','adult|Gabapentin':'YNN-N','adult|Pregabalin':'YYN-Y','adult|靜脈注射 ferric carboxymaltose':'YYY-N',
+ 'adult|靜脈注射低分子量 iron dextran':'Y---N','adult|靜脈注射 ferumoxytol':'Y---N','adult|口服硫酸亞鐵（ferrous sulfate）':'Y---Y','adult|Dipyridamole':'Y---N',
+ 'adult|長效 oxycodone 及其他鴉片類':'YN--Y','adult|雙側高頻腓神經刺激':'Y---N','adult|Levodopa':'NNNYN','adult|Pramipexole':'YYYYN',
+ 'adult|Rotigotine 貼片':'YYYYY','adult|Ropinirole':'YNYYN','adult|Bupropion':'N---N','adult|Carbamazepine':'N---Y','adult|Clonazepam':'----N',
+ 'adult|纈草（Valerian）':'NN--Y','adult|Valproic acid':'N---N','adult|Cabergoline':'Y-YYY',
+ 'esrd|Gabapentin':'YY--Y','esrd|靜脈注射 iron sucrose':'Y---N','esrd|維生素 C':'Y----','esrd|Levodopa':'NY-YN','esrd|Rotigotine 貼片':'Y-NYY'};
+const GL=['症狀嚴重度','睡眠品質','生活品質','症狀惡化現象','因副作用退出'];
+function grid(k){const g=G[k];if(!g)return '';return '<div class="grid">'+[...g].map((c,i)=>{const harm=i>2;let cls='na',t='未報告';if(c==='Y'){cls=harm?'bad':'good';t=harm?'有':'有改善';}else if(c==='N'){cls=harm?'good':'no';t=harm?'未達臨床意義':'未達臨床意義';}return `<span class="${cls}"><small>${GL[i]}</small>${t}</span>`}).join('')+'</div>';}
+let pop='adult', on=new Set(['sf','cf','ca','sa']);
+const list=document.getElementById('list');
+function render(){
+  const rows=D.filter(d=>d[0]===pop&&on.has(d[1]));
+  list.innerHTML=rows.length?rows.map(d=>{const s=S[d[1]];return `<details class="item" style="--c:${s.c}"><summary><span class="nm">${d[2]}</span><span class="en">${d[3]}</span><span class="badge${s.d?' dark':''}">${s.t}</span></summary><div class="body"><p><span class="cert">證據確定性：${d[4]}</span></p>${grid(d[0]+'|'+d[2])}<p>${d[5]}</p>${d[6]?`<p class="small">${d[6]}</p>`:''}</div></details>`}).join(''):'<p class="small">這個對象在此燈號沒有建議項目，點其他燈號看看。</p>';
+}
+document.querySelectorAll('.pole button').forEach(b=>b.addEventListener('click',()=>{
+  const f=b.dataset.f;
+  if(f==='all'){on=new Set(['sf','cf','ca','sa']);}
+  else if(on.size===4){on=new Set([f]);}
+  else{on.has(f)?on.delete(f):on.add(f); if(!on.size)on=new Set(['sf','cf','ca','sa']);}
+  document.querySelectorAll('.pole button[data-f]:not(.all)').forEach(x=>{const k=on.has(x.dataset.f);x.classList.toggle('on',k);x.setAttribute('aria-pressed',k)});
+  render();
+}));
+document.querySelectorAll('.tabs button').forEach(b=>b.addEventListener('click',()=>{
+  pop=b.dataset.p; document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-pressed',x===b)); render();
+}));
+render();
+
+/* augmentation */
+const sym=document.getElementById('sym'),txt=document.getElementById('augtxt');
+function aug(late){
+  document.getElementById('t0').setAttribute('aria-pressed',!late);
+  document.getElementById('t1').setAttribute('aria-pressed',late);
+  sym.style.left=late?'40%':'79%'; sym.style.width=late?'56%':'17%';
+  ['armL','armR'].forEach(id=>document.getElementById(id).setAttribute('fill',late?'#E8552D':'#C7E2DE'));
+  txt.textContent=late?'症狀提早到下午甚至白天出現，坐下後更快發作，還可能擴散到手臂。':'症狀主要在晚上出現，集中在雙腿。';
+}
+document.getElementById('t0').onclick=()=>aug(false);
+document.getElementById('t1').onclick=()=>aug(true);
+
+/* iron */
+document.getElementById('chk').onclick=()=>{
+  const who=document.getElementById('who').value;
+  const f=parseFloat(document.getElementById('fer').value), t=parseFloat(document.getElementById('tsat').value);
+  const r=document.getElementById('res');
+  if(isNaN(f)){r.textContent='請先輸入鐵蛋白數值。';return;}
+  if(who==='child'){
+    r.innerHTML=f<50?'<strong>鐵蛋白 &lt; 50 ng/mL：</strong>依共識，兒童可考慮口服或靜脈補鐵。':'<strong>鐵蛋白 ≥ 50 ng/mL：</strong>未達兒童共識的補鐵門檻，其他處置請與醫師討論。';return;
+  }
+  const lowT=!isNaN(t)&&t<20;
+  if(f<=75||lowT) r.innerHTML='<strong>鐵蛋白 ≤ 75 或飽和度 &lt; 20%：</strong>依共識，可考慮<strong>口服或靜脈</strong>補鐵。';
+  else if(f<=100) r.innerHTML='<strong>鐵蛋白 75–100：</strong>依共識，建議只用<strong>靜脈</strong>補鐵（此範圍口服鐵吸收差）。';
+  else r.innerHTML='<strong>鐵蛋白 &gt; 100'+(isNaN(t)?'':' 且飽和度 ≥ 20%')+'：</strong>未達共識的補鐵門檻。不過指引也提到，不寧腿的問題可能在腦部缺鐵，部分血清鐵正常的人仍可能從補鐵獲益，是否嘗試請與醫師討論。';
+  if(isNaN(t)) r.innerHTML+='<br><span class="small">未輸入運鐵蛋白飽和度，結果只依鐵蛋白判讀。</span>';
+};
+</script>
+</body>
+</html>
